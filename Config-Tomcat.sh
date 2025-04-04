@@ -7,7 +7,7 @@ rm -rf /opt/tomcat/webapps/manager/META-INF/context.xml
 rm -rf /opt/tomcat/conf/tomcat-users.xml
 
 # Deploying newly updated context.xml in manager directory
-mv Checkpoint/context.xml /opt/tomcat/webapps/manager/META-INF/
+mv $WORKSPACE/context.xml /opt/tomcat/webapps/manager/META-INF/
 
 # Deploying newly updated tomcat-users.xml in manager directory
-mv Checkpoint/tomcat-users.xml /opt/tomcat/conf/
+mv $WORKSPACE/tomcat-users.xml /opt/tomcat/conf/
