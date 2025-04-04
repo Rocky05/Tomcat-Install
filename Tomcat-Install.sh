@@ -25,14 +25,14 @@ sudo ln -s /opt/apache-tomcat-${TOMCAT_VERSION} /opt/tomcat
 rm "$TOMCAT_ARCHIVE"
 
 # Start Tomcat
-/opt/tomcat/bin/startup.sh
+sudo sh /opt/tomcat/bin/startup.sh
 
 # Change Tomcat port to 8090
 sudo sed -i "s/Connector port=\"8080\"/Connector port=\"8090\"/" /opt/tomcat/conf/server.xml
 
 #Restart Tomcat to apply port change.
-/opt/tomcat/bin/shutdown.sh
-/opt/tomcat/bin/startup.sh
+sudo sh /opt/tomcat/bin/shutdown.sh
+sudo sh /opt/tomcat/bin/startup.sh
 
 # Final Message
 echo "Tomcat installation completed."
