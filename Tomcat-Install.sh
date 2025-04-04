@@ -16,7 +16,7 @@ wget "$TOMCAT_URL"
 sudo tar -xzf "$TOMCAT_ARCHIVE" -C /opt/
 
 # Changing File permissions recursively
-sudo chown -R Maven:Maven /opt/apache-tomcat-${TOMCAT_VERSION}
+sudo chown -R jenkins:jenkins /opt/apache-tomcat-${TOMCAT_VERSION}
 
 # Create symbolic link for easy access
 sudo ln -s /opt/apache-tomcat-${TOMCAT_VERSION} /opt/tomcat
@@ -33,9 +33,6 @@ sudo sed -i "s/Connector port=\"8080\"/Connector port=\"8090\"/" /opt/tomcat/con
 #Restart Tomcat to apply port change.
 /opt/tomcat/bin/shutdown.sh
 /opt/tomcat/bin/startup.sh
-
-# Check Tomcat service status
-sudo systemctl is-active tomcat
 
 # Final Message
 echo "Tomcat installation completed."
